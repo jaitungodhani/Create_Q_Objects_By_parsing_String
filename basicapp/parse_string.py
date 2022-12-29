@@ -12,8 +12,6 @@ def q(tokens):
                 pass
         else:
             return q(tokens[0])
-        print((Q.__or__ if operator == 'OR' else Q.__and__)(
-            q(tokens[:index]), q(tokens[index + 1:])))
         return (Q.__or__ if operator == 'OR' else Q.__and__)(
             q(tokens[:index]), q(tokens[index + 1:]))
     else:
