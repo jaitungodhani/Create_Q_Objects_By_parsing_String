@@ -1,6 +1,5 @@
 from pyparsing import nestedExpr
 from django.db.models import Q
-import ast
 
 def q(tokens):
     if any(isinstance(sub, list) for sub in tokens):
