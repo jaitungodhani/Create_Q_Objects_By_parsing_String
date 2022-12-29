@@ -16,6 +16,7 @@ class SchoolApi(APIView):
                 raise exceptions.NotFound("plz enter filter_string")
 
             search_filter = parse_search_phrase(parse_string)
+            print(search_filter)
             school_filter_obj = SchoolModel.objects.filter(search_filter)
             serializer = Schoolserializer(school_filter_obj, many = True)
             return Response({"data" : serializer.data})
